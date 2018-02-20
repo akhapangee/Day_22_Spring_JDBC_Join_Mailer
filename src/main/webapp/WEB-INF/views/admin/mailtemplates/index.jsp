@@ -27,7 +27,8 @@
                                 <td>${template.addedDate}</td>
                                 <td>${template.status}</td>
                                 <td>
-                                    <p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button>
+                                    <p data-placement="top" data-toggle="tooltip" title="Edit">
+                                        <a href="${SITE_URL}/admin/templates/edit/${template.id}" class="btn btn-primary btn-xs" data-title="Edit" ><span class="glyphicon glyphicon-pencil"></span></a>
                                       <span data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ></span><span class="glyphicon glyphicon-trash"></span></button></p>
                                 </td>
                             </tr>

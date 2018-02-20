@@ -6,12 +6,18 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
 ">
     <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
-          p:location="/WEB-INF/db/jdbc.properties"/>
+          p:location="/WEB-INF/setting/configuration.properties"/>
+    
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"
           p:driverClassName="${jdbc.driverClassName}" p:url="${jdbc.url}" p:username="${jdbc.username}" 
           p:password="${jdbc.password}"/>
     <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
         <property name="dataSource" ref="dataSource"/>
+        
     </bean>
 
+    <bean id="mailer" class="com.akhilesh.core.util.Mailer">
+        <property name="host" value="${email.host}"/>
+        <property name="from" value="${email.from}"/>
+    </bean>
 </beans>

@@ -72,10 +72,10 @@ public class MailTemplateDAOImpl implements MailTemplateDAO {
 
     @Override
     public int update(MailTemplate t) throws ClassNotFoundException, SQLException {
-        String sql = "update mail_templates set name=?, slug=?, content=?, status=?"
-                + "values(?,?,?,?)";
+        String sql = "update mail_templates set name=?, slug=?, content=?, status=? "
+                + "where id=?";
         return jdbcTemplate.update(sql, new Object[]{
-            t.getName(), t.getSlug(), t.getContent(), t.isStatus()
+            t.getName(), t.getSlug(), t.getContent(), t.isStatus(),t.getId()
         });
     }
 
